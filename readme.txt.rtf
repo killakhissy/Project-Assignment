@@ -23,7 +23,8 @@ syscall\
 \
 beq $v0, 0, equalToZero\
 \
-# Call fibonacci\
+#calls fibonacci\
+\
 move $a0, $v0\
 jal fibonacci\
 move $a1, $v0 # save return value to a1\
