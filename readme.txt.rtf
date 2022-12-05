@@ -6,8 +6,8 @@
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 .data\
-prompt1: .asciiz "Enter a number >=25 \\n"\
-prompt2: .asciiz "The Fibonacci value is:\\n"\
+prompt1: .asciiz "Enter a number >=25 \\n" #asks the user for input\
+prompt2: .asciiz "The Fibonacci value is:\\n" #the value for the actual fibonacci number\
 message: .asciiz "The Fibonacci value is:\\n0"\
 \
 .text\
@@ -62,7 +62,7 @@ addi $a0, $s0, -2 # set args for recursive call to f(n-2)\
 jal fibonacci\
 add $v0, $s1, $v0 # add result of f(n-1) to it\
 fibonacciExit:\
-# Epilogue\
+\
 lw $ra, 8($sp)\
 lw $s0, 4($sp)\
 lw $s1, 0($sp)\
